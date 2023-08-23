@@ -1,15 +1,10 @@
 import React from 'react';
-import {View, StatusBar, StyleSheet, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Ionic from 'react-native-vector-icons/Ionicons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-// screens
 import Home from '../screens/Home';
 import Location from '../screens/Location';
 import Profile from '../screens/Profile';
-import {Icon} from 'native-base';
 import HomeActive from '../assets/images/HomeActive.svg';
 import HomeInActive from '../assets/images/HomeInActive.svg';
 import MessageInActive from '../assets/images/MessageInActive.svg';
@@ -21,13 +16,12 @@ const Tab = createBottomTabNavigator();
 export default function NavBottomBar() {
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
+      screenOptions={() => ({
         tabBarActiveTintColor: '#36ACFD',
         tabBarInactiveTintColor: 'black',
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: '#08060F',
-          // backgroundColor: 'gray',
           height: 95,
           borderTopColor: '#203140',
           borderWidth: 1,
@@ -46,7 +40,7 @@ export default function NavBottomBar() {
         }}
       />
       <Tab.Screen
-        name="Location"
+        name="Message"
         component={Location}
         options={{
           headerShown: false,
