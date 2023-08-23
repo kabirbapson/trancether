@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Text} from 'native-base';
 
-function AButton({btnText, onPress}) {
+function AButton({btnText, onPress, ...props}) {
   return (
     <Button
       w={'139'}
@@ -10,7 +10,8 @@ function AButton({btnText, onPress}) {
       borderBottomRightRadius={20}
       bg={'#36ACFD'}
       onPress={onPress}
-      justifyContent={'center'}>
+      justifyContent={'center'}
+      {...props}>
       <Text color={'white'} fontWeight={'extrabold'} fontSize={16}>
         {btnText}
       </Text>

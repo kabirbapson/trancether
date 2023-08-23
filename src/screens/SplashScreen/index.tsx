@@ -5,11 +5,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function SplashScreen({navigation}: any) {
   useEffect(() => {
-    fetchDataFromStorage();
-    // setTimeout(() => {
-    // navigation.navigate('HomeBottomBar');
-    //   console.log('onborad')
-    // }, 1000);
+    setTimeout(() => {
+      fetchDataFromStorage();
+    }, 1000);
   });
 
   async function fetchDataFromStorage() {

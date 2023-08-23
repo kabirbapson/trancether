@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import {Box} from 'native-base';
+import {Box, Text} from 'native-base';
 
 const DATA = [
   {
@@ -33,21 +33,22 @@ const DATA = [
   },
 ];
 
-
-
 function Home({navigation, data}) {
   // console.log({data}, navigation);
-  const renderItem = ({item}) => <Item item={item} />;
 
   return (
     <Box
       safeArea
-      bg={'#08060F'}
+      // bg={'#08060F'}
       justifyContent={'center'}
       alignItems={'center'}>
       <FlatList
         data={DATA}
-        renderItem={renderItem}
+        renderItem={({item}) => (
+          <Box>
+            <Text>{item.title}</Text>
+          </Box>
+        )}
         keyExtractor={item => item.id}
         numColumns={2}
         showsVerticalScrollIndicator={false}

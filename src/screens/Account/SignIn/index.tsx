@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import {Box, Button, Divider, HStack, Text, VStack} from 'native-base';
-import {Sae} from 'react-native-textinput-effects';
+import {Button, HStack, Text, VStack} from 'native-base';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import AInput from '../../../components/Account/AInput';
 import AButton from '../../../components/Account/AButton';
 import {validateEmail} from '../../../utils/helper';
-import {StyleSheet} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function SignIn() {
   const [email, setEmail] = useState<string>('');
@@ -13,6 +12,7 @@ function SignIn() {
   const [isInvalidEmail, setIsInValidEmail] = useState<boolean>(false);
   const [isInvalidPassword, setIsInValidPassword] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // validateEmail(email);
   // const isValid = !validateEmail(email);
@@ -34,6 +34,19 @@ function SignIn() {
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+  const navigation = useNavigation();
+  const handleSignIn = () => {
+    if (!validateEmail(email) || password.length < 6) {
+      setIsInValidPassword(true);
+      setIsInValidEmail(true);
+      console.log('failed');
+      return;
+    } 
+    setIsInValidPassword(false);
+    setIsInValidEmail(false);
+    setIsLoading(true);
+    navigation.navigate('HomeBottomBar');
   };
   return (
     <VStack m={4}>
@@ -75,7 +88,12 @@ function SignIn() {
         mt={'50px'}
         alignItems={'center'}
         justifyContent={'space-between'}>
-        <AButton btnText={'SIGN IN'} onPress={() => {}} />
+        <AButton
+          isDisabled={password.length < 5 || !validateEmail(email)}
+          isLoading={isLoading}
+          btnText={'SIGN IN'}
+          onPress={handleSignIn}
+        />
         <Button
           _text={{color: '#2E485B', fontSize: 15}}
           variant={'ghost'}
