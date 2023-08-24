@@ -4,12 +4,12 @@ import {View, StyleSheet, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // screens
-import Home from '../screens/Home';
-import Location from '../screens/Location';
-import Profile from '../screens/Profile';
-import NavBottomBar from './NavBottomBar';
 import SplashScreen from '../screens/SplashScreen';
-import Account from '../screens/Account';
+import AccountSetup from '../screens/AccountSetup';
+import Messages from '../screens/Dashboard/Messages';
+import Home from '../screens/Dashboard/Home';
+import Profile from '../screens/Dashboard/Profile';
+import Dashboard from '../screens/Dashboard';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ export default function ScreenNavigation() {
   return (
     <Stack.Navigator
       // initialRouteName="SplashScreen"
-      initialRouteName="HomeBottomBar"
+      initialRouteName="Dashboard"
       screenOptions={{
         headerMode: 'screen',
         headerTintColor: 'white',
@@ -29,18 +29,28 @@ export default function ScreenNavigation() {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Account"
-        component={Account}
+        name="Dashboard"
+        component={Dashboard}
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="HomeBottomBar"
-        component={NavBottomBar}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Settings"
+        name="Profile"
         component={Profile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AccountSetup"
+        component={AccountSetup}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Messages"
+        component={Messages}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

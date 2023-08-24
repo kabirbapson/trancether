@@ -2,18 +2,18 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '../screens/Home';
-import Location from '../screens/Location';
-import Profile from '../screens/Profile';
-import HomeActive from '../assets/images/HomeActive.svg';
-import HomeInActive from '../assets/images/HomeInActive.svg';
-import MessageInActive from '../assets/images/MessageInActive.svg';
-import MessageActive from '../assets/images/MessageActive.svg';
-import ProfileActive from '../assets/images/ProfileActive.svg';
-import ProfileInActive from '../assets/images/ProfileInActive.svg';
+import HomeActive from '../../assets/images/HomeActive.svg';
+import HomeInActive from '../../assets/images/HomeInActive.svg';
+import MessageInActive from '../../assets/images/MessageInActive.svg';
+import MessageActive from '../../assets/images/MessageActive.svg';
+import ProfileActive from '../../assets/images/ProfileActive.svg';
+import ProfileInActive from '../../assets/images/ProfileInActive.svg';
+import Home from './Home';
+import Messages from './Messages';
+import Profile from './Profile';
 const Tab = createBottomTabNavigator();
 
-export default function NavBottomBar() {
+export default function Dashboard() {
   return (
     <Tab.Navigator
       screenOptions={() => ({
@@ -41,7 +41,7 @@ export default function NavBottomBar() {
       />
       <Tab.Screen
         name="Message"
-        component={Location}
+        component={Messages}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) =>

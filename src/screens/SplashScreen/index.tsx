@@ -16,7 +16,7 @@ export default function SplashScreen({navigation}: any) {
       if (data) {
         navigation.navigate('HomeBottomBar', {data});
       } else {
-        navigation.navigate('Account');
+        navigation.navigate('AccountSetup');
       }
     } catch (error) {
       console.log(error);

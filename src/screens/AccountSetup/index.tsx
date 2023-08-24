@@ -15,7 +15,7 @@ import inActiveIcon from './../../assets/images/Inactive.svg';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
-function Account() {
+function AccountSetup() {
   const [showSignIn, setShowSignIn] = useState<boolean>(true);
 
   return (
@@ -74,4 +74,4 @@ function Account() {
     </Box>
   );
 }
-export default Account;
+export default AccountSetup;
