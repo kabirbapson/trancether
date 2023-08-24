@@ -1,11 +1,16 @@
 import React from 'react';
 
-import {Box} from 'native-base';
+import {Box, Button, Text} from 'native-base';
 
-export default function Profile({}) {
+export default function Profile({navigation}) {
   return (
-    <Box justifyContent={'center'} alignItems={'center'}>
-      Profile appear here
+    <Box
+      safeArea
+      // bg={'#08060F'}
+      justifyContent={'center'}
+      alignItems={'center'}>
+      <Text>Profile will appear here</Text>
+      <Button onPress={() => navigation.navigate('Home')}>to Home</Button>
     </Box>
   );
 }
