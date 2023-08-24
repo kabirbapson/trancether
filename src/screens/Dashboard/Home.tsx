@@ -23,6 +23,7 @@ export default function Home({navigation}) {
       px={'20px'}
       pt={4}
       safeArea
+      
       // justifyContent={'center'}
       alignItems={'center'}>
       <Header />
