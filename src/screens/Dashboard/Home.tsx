@@ -7,6 +7,9 @@ import Ethereum from '../../assets/images/Ethereum.svg';
 import Litecoin from '../../assets/images/Litecoin.svg';
 import Subscreen_pullup from '../../assets/images/Subscreen_pullup.svg';
 import Subscreen_pulldown from '../../assets/images/Subscreen_pulldown.svg';
+import TodayFilter from '../../assets/images/TodayFilter.svg';
+import ArrowLeft from '../../assets/images/ArrowLeft.svg';
+import ArrowRight from '../../assets/images/ArrowRight.svg';
 
 import {StyleSheet, View} from 'react-native';
 
@@ -21,6 +24,81 @@ const icons = [
   {currency: 'Bitcoin', icon: <Bitcoin />},
   {currency: 'Ethereum', icon: <Ethereum />},
   {currency: 'Litecoin', icon: <Litecoin />},
+];
+
+const coinsData = [
+  {
+    id: 1,
+    tType: 'Bought',
+    arrowIcon: <ArrowLeft />,
+    tTime: '12:00pm',
+    tDate: '11/11/2020',
+    tAmount: 'N300,000',
+    tPlusMinus: '+1.25BTC',
+  },
+  {
+    id: 2,
+    tType: 'Sold',
+    arrowIcon: <ArrowRight />,
+    tTime: '9:00pm',
+    tDate: '11/11/2020',
+    tAmount: 'N500,000',
+    tPlusMinus: '-2.32BTC',
+  },
+  {
+    id: 3,
+    tType: 'Sold',
+    arrowIcon: <ArrowRight />,
+    tTime: '8:45pm',
+    tDate: '11/11/2020',
+    tAmount: 'N250,000',
+    tPlusMinus: '-0.81BTC',
+  },
+  {
+    id: 4,
+    tType: 'Bought',
+    arrowIcon: <ArrowLeft />,
+    tTime: '7:00pm',
+    tDate: '11/11/2020',
+    tAmount: 'N250,000',
+    tPlusMinus: '+0.96BTC',
+  },
+  {
+    id: 5,
+    tType: 'Sold',
+    arrowIcon: <ArrowRight />,
+    tTime: '6:00pm',
+    tDate: '11/11/2020',
+    tAmount: 'N50,000',
+    tPlusMinus: '-0.11BTC',
+  },
+  {
+    id: 6,
+    tType: 'Bought',
+    arrowIcon: <ArrowLeft />,
+    tTime: '5:23pm',
+    tDate: '11/11/2020',
+    tAmount: 'N45,000',
+    tPlusMinus: '+0.10BTC',
+  },
+  {
+    id: 7,
+    tType: 'Sold',
+    arrowIcon: <ArrowRight />,
+    tTime: '4:13pm',
+    tDate: '11/11/2020',
+    tAmount: 'N200,000',
+    tPlusMinus: '-0.71BTC',
+  },
+  {
+    id: 8,
+    tType: 'Sold',
+    arrowIcon: <ArrowRight />,
+    tTime: '1:54pm',
+    tDate: '11/11/2020',
+    tAmount: 'N250,000',
+    tPlusMinus: '-0.96BTC',
+  },
 ];
 
 export default function Home() {
@@ -61,17 +139,42 @@ export default function Home() {
   };
   const data = useMemo(
     () =>
-      Array(50)
+      Array(20)
         .fill(0)
         .map((_, index) => `index-${index}`),
     [],
   );
   const renderItem = useCallback(
     item => (
-      <View key={item} style={{padding: 6, margin: 6}}>
-        <Text color={'white'}>{item}</Text>
-        <Divider mt={2} />
-      </View>
+      <Box key={item.id} p={'3'}>
+        <Box
+          flexDirection={'row'}
+          alignItems={'center'}
+          justifyContent={'space-between'}
+          bg={'green.900'}>
+          <Box m={2}>{item.arrowIcon}</Box>
+          <Box m={1} flex={1} bg={'gray.100'}>
+            <Box>
+              <Text fontSize={17} bold fontFamily={'exo 2'} color={'#849FB2'}>
+                {item.tType}
+              </Text>
+            </Box>
+            <Box flexDir={'row'}>
+              <Text fontSize={12} color={'#2E485B'}>{item.tTime}</Text>
+              {'`'}
+              <Text fontSize={12} color={'#2E485B'}>{item.tDate}</Text>
+
+            </Box>
+          </Box>
+          <Box m={1} bg={'gray.200'} alignItems={'flex-end'}>
+            <Text fontSize={17} color={'#5DAF76'}>
+              {item.tPlusMinus}
+            </Text>
+            <Text   fontSize={12} color={'#2E485B'}>{item.tAmount}</Text>
+          </Box>
+        </Box>
+        <Divider mt={2} bg={'red.100'} h={0.3} />
+      </Box>
     ),
     [],
   );
@@ -170,9 +273,11 @@ export default function Home() {
               }}>
               <Text>Awesome </Text>
             </BottomSheetView> */}
-            <Text color={'amber.100'}>Today</Text>
+            <Box mx={1} mb={2} px={2}>
+              <TodayFilter />
+            </Box>
             <BottomSheetScrollView contentContainerStyle={{}}>
-              {data.map(renderItem)}
+              {coinsData.map(renderItem)}
             </BottomSheetScrollView>
           </Box>
         </BottomSheet>

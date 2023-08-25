@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="69px" height="18px" viewBox="0 0 69 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Actions / Dropdowns / Small</title>
+    <defs>
+        <path d="M5.24993182,5.24962158 C5.07893182,5.24962158 4.90868182,5.19187158 4.76993182,5.07562158 L0.269931819,1.32562158 C-0.0480681805,1.06087158 -0.0915681805,0.58762158 0.173931819,0.26962158 C0.438681819,-0.0483784199 0.911181819,-0.0911284199 1.22993182,0.17362158 L5.25818182,3.53062158 L9.27968182,0.29437158 C9.60218182,0.0348715801 10.0746818,0.0858715801 10.3341818,0.40837158 C10.5936818,0.73087158 10.5426818,1.20262158 10.2201818,1.46287158 L5.72018182,5.08387158 C5.58293182,5.19412158 5.41643182,5.24962158 5.24993182,5.24962158" id="path-1"></path>
+    </defs>
+    <g id="Actions-/-Dropdowns-/-Small" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="TODAY" font-family="Exo2-Bold, Exo 2" font-size="12" font-weight="bold" letter-spacing="1.71428571" fill="#2E485B">
+            <tspan x="0" y="13">TODAY</tspan>
+        </text>
+        <g id="Icons-/-Arrow-/-IOS-/-Down" transform="translate(54.7501, 6.7504)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Color" fill="#2E485B" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
