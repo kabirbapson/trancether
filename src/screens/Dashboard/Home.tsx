@@ -19,6 +19,7 @@ import BottomSheet, {
 } from '@gorhom/bottom-sheet';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import BackDrop from '../../components/Dashboard/BackDrop';
+import RenderCoins from '../../components/Dashboard/RenderCoins';
 
 const icons = [
   {currency: 'Bitcoin', icon: <Bitcoin />},
@@ -144,40 +145,45 @@ export default function Home() {
         .map((_, index) => `index-${index}`),
     [],
   );
-  const renderItem = useCallback(
-    item => (
-      <Box key={item.id} p={'3'}>
-        <Box
-          flexDirection={'row'}
-          alignItems={'center'}
-          justifyContent={'space-between'}
-          bg={'green.900'}>
-          <Box m={2}>{item.arrowIcon}</Box>
-          <Box m={1} flex={1} bg={'gray.100'}>
-            <Box>
-              <Text fontSize={17} bold fontFamily={'exo 2'} color={'#849FB2'}>
-                {item.tType}
-              </Text>
-            </Box>
-            <Box flexDir={'row'}>
-              <Text fontSize={12} color={'#2E485B'}>{item.tTime}</Text>
-              {'`'}
-              <Text fontSize={12} color={'#2E485B'}>{item.tDate}</Text>
-
-            </Box>
-          </Box>
-          <Box m={1} bg={'gray.200'} alignItems={'flex-end'}>
-            <Text fontSize={17} color={'#5DAF76'}>
-              {item.tPlusMinus}
-            </Text>
-            <Text   fontSize={12} color={'#2E485B'}>{item.tAmount}</Text>
-          </Box>
-        </Box>
-        <Divider mt={2} bg={'red.100'} h={0.3} />
-      </Box>
-    ),
-    [],
-  );
+  // const renderItem = useCallback(
+  //   item => (
+  //     <Box key={item.id} p={'3'}>
+  //       <Box
+  //         flexDirection={'row'}
+  //         alignItems={'center'}
+  //         justifyContent={'space-between'}
+  //         bg={'green.900'}>
+  //         <Box m={2}>{item.arrowIcon}</Box>
+  //         <Box m={1} flex={1} bg={'gray.100'}>
+  //           <Box>
+  //             <Text fontSize={17} bold fontFamily={'exo 2'} color={'#849FB2'}>
+  //               {item.tType}
+  //             </Text>
+  //           </Box>
+  //           <Box flexDir={'row'}>
+  //             <Text fontSize={12} color={'#2E485B'}>
+  //               {item.tTime}
+  //             </Text>
+  //             {'`'}
+  //             <Text fontSize={12} color={'#2E485B'}>
+  //               {item.tDate}
+  //             </Text>
+  //           </Box>
+  //         </Box>
+  //         <Box m={1} bg={'gray.200'} alignItems={'flex-end'}>
+  //           <Text fontSize={17} color={'#5DAF76'}>
+  //             {item.tPlusMinus}
+  //           </Text>
+  //           <Text fontSize={12} color={'#2E485B'}>
+  //             {item.tAmount}
+  //           </Text>
+  //         </Box>
+  //       </Box>
+  //       <Divider mt={2} bg={'red.100'} h={0.3} />
+  //     </Box>
+  //   ),
+  //   [],
+  // );
 
   const handleComponent = () => {
     return (
@@ -191,7 +197,6 @@ export default function Home() {
     <GestureHandlerRootView
       style={{
         flex: 1,
-        paddingHorizontal: 'auto',
       }}>
       <Box
         flex={1}
@@ -246,9 +251,8 @@ export default function Home() {
             </HStack>
           </Box>
         </Box>
-        {/* <BackDrop /> */}
+
         <BottomSheet
-          // style={{borderRadius: 10}}
           onChange={handleSheetChanges}
           handleComponent={handleComponent}
           ref={sheetRef}
@@ -258,26 +262,13 @@ export default function Home() {
             borderRadius: 20,
             borderWidth: 0.5,
             borderTopColor: '#2E485B',
-            // padding: 4,
-            // margin: 4,
-          }}
-          // onChange={handleSheetChange}
-        >
-          <Box bg={'#080812'} flex={1} m={4}>
-            {/* <BottomSheetView
-              style={{
-                backgroundColor: 'green',
-                margin: 10,
-                padding: 4,
-                margin: 4,
-              }}>
-              <Text>Awesome </Text>
-            </BottomSheetView> */}
+          }}>
+          <Box bg={'#080812'} flex={1} my={2} mx={4}>
             <Box mx={1} mb={2} px={2}>
               <TodayFilter />
             </Box>
             <BottomSheetScrollView contentContainerStyle={{}}>
-              {coinsData.map(renderItem)}
+              {coinsData.map(RenderCoins)}
             </BottomSheetScrollView>
           </Box>
         </BottomSheet>
