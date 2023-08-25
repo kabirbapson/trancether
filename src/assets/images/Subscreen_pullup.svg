@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34.5008073px" height="34px" viewBox="0 0 34.5008073 9.00040831" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Arrows / Subscreen pullup</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Subscreen-bg" transform="translate(-194.9996, -21.5)" fill="#2E485B">
+            <g id="Icons-/-Arrows-/-Subscreen-pullup" transform="translate(194.9996, 21.5)">
+                <path d="M32.4433222,8.89271509 C33.2124975,9.2003852 34.0854532,8.82626134 34.3931233,8.05708607 C34.7007934,7.28791079 34.3266696,6.41495513 33.5574943,6.10728502 L18.5574943,0.107285016 C18.2151339,-0.0296591235 17.8343269,-0.0357021578 17.4877937,0.0903099173 L0.987793667,6.09030992 C0.209243303,6.37341914 -0.192391097,7.23406428 0.0907181263,8.01261465 C0.373827349,8.79116501 1.23447249,9.19279941 2.01302286,8.90969019 L17.9749328,3.1053593 L32.4433222,8.89271509 Z" id="Color"></path>
+            </g>
+        </g>
+    </g>
+</svg>
