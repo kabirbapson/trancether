@@ -10,7 +10,6 @@ export default function Messages({navigation}) {
       px={'20px'}
       pt={4}
       safeArea
-      // justifyContent={'center'}
       alignItems={'center'}>
       <Header />
       <Text flex={2} fontSize={24} color={'warmGray.600'}>

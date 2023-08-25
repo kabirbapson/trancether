@@ -1,16 +1,18 @@
 import React from 'react';
 import {Box, Circle, Divider, Text} from 'native-base';
-
+import ArrowLeft from '../../assets/images/ArrowLeft.svg';
+import ArrowRight from '../../assets/images/ArrowRight.svg';
 const RenderCoins = item => {
   return (
     <Box key={item.id} p={'3'}>
       <Box
         flexDirection={'row'}
         alignItems={'center'}
-        justifyContent={'space-between'}
-       >
-        <Box alignSelf={'center'}  mr={3}>{item.arrowIcon}</Box>
-        <Box m={1} flex={1} >
+        justifyContent={'space-between'}>
+        <Box alignSelf={'center'} mr={3}>
+          {item.tType === 'Bought' ? <ArrowLeft /> : <ArrowRight />}
+        </Box>
+        <Box m={1} flex={1}>
           <Box>
             <Text fontSize={17} bold fontFamily={'exo 2'} color={'#849FB2'}>
               {item.tType}
@@ -27,7 +29,9 @@ const RenderCoins = item => {
           </Box>
         </Box>
         <Box m={1} alignItems={'flex-end'}>
-          <Text fontSize={17} color={'#5DAF76'}>
+          <Text
+            fontSize={17}
+            color={item.tType === 'Bought' ? '#5DAF76' : '#E73B62'}>
             {item.tPlusMinus}
           </Text>
           <Text fontSize={12} color={'#2E485B'}>

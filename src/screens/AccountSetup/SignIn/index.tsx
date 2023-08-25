@@ -4,7 +4,7 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import AInput from '../../../components/Account/AInput';
 import AButton from '../../../components/Account/AButton';
 import {validateEmail} from '../../../utils/helper';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 function SignIn() {
   const [email, setEmail] = useState<string>('');
@@ -14,9 +14,8 @@ function SignIn() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  // validateEmail(email);
-  // const isValid = !validateEmail(email);
-  // console.log({isValid}, validateEmail(email));
+  const navigation = useNavigation();
+
   const checkEmail = () => {
     if (!validateEmail(email)) {
       setIsInValidEmail(true);
@@ -35,18 +34,17 @@ function SignIn() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  const navigation = useNavigation();
   const handleSignIn = () => {
     if (!validateEmail(email) || password.length < 6) {
       setIsInValidPassword(true);
       setIsInValidEmail(true);
       console.log('failed');
       return;
-    } 
+    }
     setIsInValidPassword(false);
     setIsInValidEmail(false);
     setIsLoading(true);
-    navigation.navigate('HomeBottomBar');
+    navigation.navigate('Home');
   };
   return (
     <VStack m={4}>

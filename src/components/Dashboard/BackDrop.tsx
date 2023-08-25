@@ -26,9 +26,10 @@ const BackDrop = () => {
           title="Present Modal"
           color="black"
         />
-        <BottomSheetModal backgroundStyle={{backgroundColor: 'grey'}}
+        <BottomSheetModal
+          backgroundStyle={{backgroundColor: 'grey'}}
           ref={bottomSheetModalRef}
-        //   index={1}
+          //   index={1}
           snapPoints={snapPoints}
           onChange={handleSheetChanges}>
           <View style={styles.contentContainer}>
@@ -54,3 +55,4 @@ const styles = StyleSheet.create({
 });
 
 export default BackDrop;
+

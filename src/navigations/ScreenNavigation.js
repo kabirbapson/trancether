@@ -16,8 +16,7 @@ const Stack = createNativeStackNavigator();
 export default function ScreenNavigation() {
   return (
     <Stack.Navigator
-      // initialRouteName="SplashScreen"
-      initialRouteName="Dashboard"
+      initialRouteName="SplashScreen"
       screenOptions={{
         headerMode: 'screen',
         headerTintColor: 'white',

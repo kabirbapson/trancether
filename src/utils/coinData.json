@@ -1,0 +1,73 @@
+[{
+    "arrowIcon": "<ArrowLeft />",
+    "id": 1,
+    "tAmount": "N300,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "+ 1.25BTC",
+    "tTime": "10:30pm",
+    "tType": "Bought"
+},
+{
+    "arrowIcon": "<ArrowRight />",
+    "id": 2,
+    "tAmount": "N500,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "- 2.32BTC",
+    "tTime": "9:00pm",
+    "tType": "Sold"
+},
+{
+    "arrowIcon": "<ArrowRight />",
+    "id": 3,
+    "tAmount": "N250,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "- 0.81BTC",
+    "tTime": "8:45pm",
+    "tType": "Sold"
+},
+{
+    "arrowIcon": "<ArrowLeft />",
+    "id": 4,
+    "tAmount": "N250,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "+ 0.96BTC",
+    "tTime": "7:00pm",
+    "tType": "Bought"
+},
+{
+    "arrowIcon": "<ArrowRight />",
+    "id": 5,
+    "tAmount": "N50,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "- 0.11BTC",
+    "tTime": "6:45pm",
+    "tType": "Sold"
+},
+{
+    "arrowIcon": "<ArrowLeft />",
+    "id": 6,
+    "tAmount": "N45,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "+ 0.10BTC",
+    "tTime": "5:23pm",
+    "tType": "Bought"
+},
+{
+    "arrowIcon": "<ArrowRight />",
+    "id": 7,
+    "tAmount": "N200,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "- 0.71BTC",
+    "tTime": "4:13pm",
+    "tType": "Sold"
+},
+{
+    "arrowIcon": "<ArrowRight />",
+    "id": 8,
+    "tAmount": "N250,000",
+    "tDate": "11/11/2020",
+    "tPlusMinus": "- 0.96BTC",
+    "tTime": "1:54pm",
+    "tType": "Sold"
+}
+]

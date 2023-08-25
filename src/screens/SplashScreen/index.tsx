@@ -23,7 +23,7 @@ export default function SplashScreen({navigation}: any) {
     }
   }
   return (
-    <Box>
+    <Box flex={1}>
       <Image source={splash} alt="splash" w={'100%'} h={'100%'} />
     </Box>
   );
