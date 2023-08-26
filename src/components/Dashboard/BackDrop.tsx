@@ -17,7 +17,6 @@ const BackDrop = () => {
     console.log('handleSheetChanges', index);
   }, []);
 
-  
   // renders
   return (
     <BottomSheetModalProvider>
@@ -56,4 +55,3 @@ const styles = StyleSheet.create({
 });
 
 export default BackDrop;
-
