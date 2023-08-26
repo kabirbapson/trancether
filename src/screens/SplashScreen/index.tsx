@@ -7,14 +7,14 @@ export default function SplashScreen({navigation}: any) {
   useEffect(() => {
     setTimeout(() => {
       fetchDataFromStorage();
-    }, 1000);
+    }, 2000);
   });
 
   async function fetchDataFromStorage() {
     try {
       const data = await AsyncStorage.getItem('auth');
       if (data) {
-        navigation.navigate('HomeBottomBar', {data});
+        navigation.navigate('Dashboard', {data});
       } else {
         navigation.navigate('AccountSetup');
       }

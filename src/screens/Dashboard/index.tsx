@@ -18,6 +18,7 @@ export default function Dashboard() {
 
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={() => ({
         tabBarActiveTintColor: '#36ACFD',
         tabBarInactiveTintColor: 'black',

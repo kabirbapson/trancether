@@ -44,7 +44,7 @@ function SignIn() {
     setIsInValidPassword(false);
     setIsInValidEmail(false);
     setIsLoading(true);
-    navigation.navigate('Home');
+    navigation.navigate('Dashboard');
   };
   return (
     <VStack m={4}>
