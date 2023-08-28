@@ -4,17 +4,14 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import AInput from '../../../components/Account/AInput';
 import AButton from '../../../components/Account/AButton';
 import {validateEmail} from '../../../utils/helper';
-import {useNavigation} from '@react-navigation/native';
 
-function SignIn() {
+function SignIn({navigation}) {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isInvalidEmail, setIsInValidEmail] = useState<boolean>(false);
   const [isInvalidPassword, setIsInValidPassword] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  const navigation = useNavigation();
 
   const checkEmail = () => {
     if (!validateEmail(email)) {

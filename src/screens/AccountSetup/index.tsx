@@ -6,14 +6,15 @@ import {
   HStack,
   Icon,
   Image,
-  Input,
-  Text,
+  KeyboardAvoidingView,
+  ScrollView,
 } from 'native-base';
 import logo from './../../assets/images/widelogo.png';
 import activeIcon from './../../assets/images/Active.svg';
 import inActiveIcon from './../../assets/images/Inactive.svg';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import {Platform} from 'react-native';
 
 function AccountSetup() {
   const [showSignIn, setShowSignIn] = useState<boolean>(true);
@@ -68,9 +69,14 @@ function AccountSetup() {
         </Button>
       </HStack>
 
-      <Box w={'full'} mt={10}>
-        {showSignIn ? <SignIn /> : <SignUp />}
-      </Box>
+      <KeyboardAvoidingView
+        w={'full'}
+        mt={10}
+        enabled
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}>
+        <ScrollView>{showSignIn ? <SignIn /> : <SignUp />}</ScrollView>
+      </KeyboardAvoidingView>
     </Box>
   );
 }

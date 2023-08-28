@@ -7,7 +7,7 @@ export default function SplashScreen({navigation}: any) {
   useEffect(() => {
     setTimeout(() => {
       fetchDataFromStorage();
-    }, 2000);
+    }, 1000);
   });
 
   async function fetchDataFromStorage() {

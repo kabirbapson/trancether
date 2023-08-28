@@ -33,7 +33,9 @@ export default function Home() {
   const handleSheetChanges = useCallback((index: number) => {
     if (index === 1) {
       setIsSheetUp(true);
-    } else setIsSheetUp(false);
+    } else {
+      setIsSheetUp(false);
+    }
   }, []);
 
   const handleBuy = () => {

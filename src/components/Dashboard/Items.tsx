@@ -1,7 +1,5 @@
 import React from 'react';
-import {Box, Button, Circle, HStack, VStack} from 'native-base';
-import Menu from './../../assets/images/Menu.svg';
-import Notification from './../../assets/images/Notification.svg';
+import {Box, Button, Circle} from 'native-base';
 import {StyleSheet, Text} from 'react-native';
 
 interface ItemsProps {

@@ -3,7 +3,6 @@ import {View, Text, StyleSheet, Button} from 'react-native';
 import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 
 const BackDrop = () => {
-  
   // ref
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 

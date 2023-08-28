@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Divider, Input, Text} from 'native-base';
-import {Sae} from 'react-native-textinput-effects';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import {Box, Input, Text} from 'native-base';
 
 type InputType = 'password' | 'text';
 

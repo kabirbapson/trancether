@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -55,4 +54,3 @@ export default function ScreenNavigation() {
     </Stack.Navigator>
   );
 }
-const styles = StyleSheet.create({});
